@@ -215,7 +215,6 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 				),
 			 );
 
-
 		}
 
 		return array_merge( parent::scripts(), $scripts );
@@ -267,12 +266,7 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 
 			$feed_meta =  $step->get_feed_meta();
 
-			if ( $i < $count - 1 ) {
-				$next_step      = $steps[ $i + 1 ];
-				$next_step = $next_step->get_id();
-			} else {
-				$next_step = 'complete';
-			}
+			$next_step = $this->get_next_step_id( $steps, $step );
 
 			$scheduled = $step->scheduled ? $step->get_schedule_timestamp() : null;
 
@@ -306,7 +300,7 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 
 				if ( $status['status'] == 'reverted' ) {
 					$target = $step->revertValue;
-				}elseif ( $status['status'] == 'skipped' ) {
+				} elseif ( $status['status'] == 'skipped' ) {
 					$target = $next_step;
 				} else {
 					$destination_status_key = 'destination_' . $status['status'];
@@ -321,6 +315,13 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 					}
 				}
 
+				if ( is_numeric( $target ) ) {
+					$target_step = gravity_flow()->get_step( $target );
+					if ( ! $target_step->is_active() ) {
+						$target = $this->get_next_step_id( $steps,$target_step );
+					}
+				}
+
 				$targets[] = array(
 					'step_id' => $target,
 					'status' => $status['status'],
@@ -332,6 +333,32 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 		}
 
 		return $step_data;
+	}
+
+	/**
+	 * Cycles through the steps from the current step onwards to find the next active step ID or "complete".
+	 *
+	 * @param Gravity_Flow_Step[] $steps
+	 * @param Gravity_Flow_Step   $current_step
+	 *
+	 * @return int|string
+	 */
+	public function get_next_step_id( $steps, $current_step ) {
+		$started = false;
+		foreach( $steps as $step ) {
+
+			if ( $started ) {
+				if ( $step->is_active() ) {
+					return $step->get_id();
+				}
+			}
+
+			if ( $step->get_id() == $current_step->get_id() ) {
+				$started = true;
+			}
+		}
+
+		return 'complete';
 	}
 
 	public function ajax_print_flowchart() {
