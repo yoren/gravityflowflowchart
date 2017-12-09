@@ -3,7 +3,7 @@
 // Include the Gravity Forms Add-On Framework.
 GFForms::include_addon_framework();
 
-class Gravity_Flow_Flowchart extends GFAddOn {
+class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 
 	/**
 	 * Contains an instance of this class, if available.
