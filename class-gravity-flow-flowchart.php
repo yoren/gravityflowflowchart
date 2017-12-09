@@ -287,7 +287,7 @@ class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 				'name'         => $step->get_name(),
 				'label'        => $step->get_label(),
 				'icon'         => $step_icon,
-				'settings_url' => admin_url( '?page=gf_edit_forms&view=settings&subview=gravityflow&id=' . $form['id'] . '&fid=' . $step_id ),
+				'settings_url' => admin_url( '?page=gf_edit_forms&view=settings&subview=gravityflow&id=' . $form_id . '&fid=' . $step_id ),
 				'scheduled'    => $scheduled,
 			);
 
