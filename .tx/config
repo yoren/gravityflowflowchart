@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[gravityflowflowchart.gravityflowflowchart]
+file_filter = languages/gravityflowflowchart-<lang>.po
+source_file = languages/gravityflowflowchart.pot
+source_lang = en_US
+type = PO
