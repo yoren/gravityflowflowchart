@@ -30,6 +30,7 @@ along with this program.  If not, see http://www.gnu.org/licenses.
 
 // Defines the current version of the Gravity Flow Flowchart Extension.
 define( 'GRAVITY_FLOW_FLOWCHART_VERSION', '1.0-dev' );
+define( 'GRAVITY_FLOW_FLOWCHART_EDD_ITEM_NAME', 'Flowchart' );
 
 // Defines the minimum version of Gravity Forms required to run Gravity Flow Flowchart Extension.
 define( 'GRAVITY_FLOW_FLOWCHART_MIN_GF_VERSION', '2.0' );
@@ -70,5 +71,32 @@ class Gravity_Flow_Flowchart_Bootstrap {
  * @return Gravity_Flow_Flowchart An instance of the Gravity_Flow_Flowchart class
  */
 function gravity_flow_flowchart() {
-	return Gravity_Flow_Flowchart::get_instance();
+	if ( class_exists( 'Gravity_Flow_Flowchart' ) ) {
+		return Gravity_Flow_Flowchart::get_instance();
+	}
+
+}
+
+add_action( 'admin_init', 'gravityflow_flowchart_edd_plugin_updater', 0 );
+
+function gravityflow_flow_chart_edd_plugin_updater() {
+
+	if ( ! function_exists( 'gravity_flow_flowchart' ) ) {
+		return;
+	}
+
+	$gravity_flow_flowchart = gravity_flow_flowchart();
+	if ( $gravity_flow_flowchart ) {
+		$settings = $gravity_flow_flowchart->get_app_settings();
+
+		$license_key = trim( rgar( $settings, 'license_key' ) );
+
+		$edd_updater = new Gravity_Flow_EDD_SL_Plugin_Updater( GRAVITY_FLOW_EDD_STORE_URL, __FILE__, array(
+			'version'   => GRAVITY_FLOW_FLOWCHART_VERSION,
+			'license'   => $license_key,
+			'item_name' => GRAVITY_FLOW_FLOWCHART_EDD_ITEM_NAME,
+			'author'    => 'Gravity Flow',
+		) );
+	}
+
 }
