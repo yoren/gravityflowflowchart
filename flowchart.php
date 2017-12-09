@@ -79,7 +79,7 @@ function gravity_flow_flowchart() {
 
 add_action( 'admin_init', 'gravityflow_flowchart_edd_plugin_updater', 0 );
 
-function gravityflow_flow_chart_edd_plugin_updater() {
+function gravityflow_flowchart_edd_plugin_updater() {
 
 	if ( ! function_exists( 'gravity_flow_flowchart' ) ) {
 		return;
