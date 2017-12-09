@@ -48,7 +48,7 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 	 * @access protected
 	 * @var    string $_path The path to the main plugin file, relative to the plugins folder.
 	 */
-	protected $_path = 'gravityflowflowchart/{{plugin_filename}}';
+	protected $_path = 'gravityflowflowchart/flowchart.php';
 
 	/**
 	 * Defines the full path to this class file.
