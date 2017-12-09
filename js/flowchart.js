@@ -18,18 +18,18 @@
 
 		if ( context == 'display' ) {
 			printAction = ajaxurl + '?action=gravityflowflowchart_print_flowchart';
-			$('#gform-settings').before('<div id="flowchart-icon"><a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i></a></div>' +
+			$('#gform-settings').before('<div id="flowchart-icon"><a href="#" title="' + strings.flowchart + '"><i class="fa fa-sitemap" aria-hidden="true"></i></a></div>' +
 				'<div id="flowchart-toolbar" style="display:none;">' +
 					'<form id="print-flowchart-form" action="' + printAction + '" method="POST" target="_blank">' +
 						'<i id="flowchart-spinner" class="fa fa-spinner fa-pulse fa-fw"></i>' +
 						'<span id="zoom-level">100%</span>' +
-						'<a title="Zoom In" id="zoom-in" href="#"><i class="fa fa-search-plus" aria-hidden="true"></i></a>' +
-						'<a title="Zoom Out" id="zoom-out" href="#"><i class="fa fa-search-minus" aria-hidden="true"></i></a>' +
+						'<a title="' + strings.zoomIn + '" id="zoom-in" href="#"><i class="fa fa-search-plus" aria-hidden="true"></i></a>' +
+						'<a title="' + strings.zoomOut + '" id="zoom-out" href="#"><i class="fa fa-search-minus" aria-hidden="true"></i></a>' +
 						'<input id="flowchart-nonce" type="hidden" name="_wpnonce" value="" />' +
 						'<input id="flowchart-json" type="hidden" name="flowchart-json" value="" />' +
 						'<input id="graph-scale" type="hidden" name="graph-scale" value="" />' +
-						'<a title="Print" id="print-flowchart" href="#" onclick="GravityFlowFlowchart.print(event);"><i class="fa fa-print" aria-hidden="true" ></i></a>' +
-						'<a title="Step List" id="step-list" href="#"><i class="fa fa-list" aria-hidden="true"></i></a>' +
+						'<a title="' + strings.print + '" id="print-flowchart" href="#" onclick="GravityFlowFlowchart.print(event);"><i class="fa fa-print" aria-hidden="true" ></i></a>' +
+						'<a title="' + strings.stepList + '" id="step-list" href="#"><i class="fa fa-list" aria-hidden="true"></i></a>' +
 					'</form>' +
 				'</div>' +
 				'<div>' +
@@ -386,11 +386,9 @@
 
 				});
 
-
 			function resizePaper(){
 				paper.fitToContent( '100%', null, 100 );
 			}
-
 
 			function getLink( source, target, label, labelColor, dashed, startDirection, endDirection ) {
 

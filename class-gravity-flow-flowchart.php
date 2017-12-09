@@ -202,6 +202,11 @@ class Gravity_Flow_Flowchart extends GFAddOn {
 					)
 				),
 				'strings' => array(
+					'flowchart' => esc_html__( 'Flowchart', 'gravityflowflowchart' ),
+					'zoomIn' => esc_html__( 'Zoom In', 'gravityflowflowchart' ),
+					'zoomOut' => esc_html__( 'Zoom Out', 'gravityflowflowchart' ),
+					'print' => esc_html__( 'Print', 'gravityflowflowchart' ),
+					'stepList' => esc_html__( 'Step List', 'gravityflowflowchart' ),
 					'vars' => array(
 						//'steps' => $step_data,
 						'paper' => array(

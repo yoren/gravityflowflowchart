@@ -1,9 +1,9 @@
 # Copyright 2015-2017 Steven Henty.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gravity Flow Flowchart Extension 0.1\n"
+"Project-Id-Version: Gravity Flow Flowchart Extension 1.0-dev\n"
 "Report-Msgid-Bugs-To: https://www.gravityflow.io\n"
-"POT-Creation-Date: 2017-12-09 14:29:38+00:00\n"
+"POT-Creation-Date: 2017-12-09 14:45:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,12 +24,28 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Textdomain-Support: yes\n"
 
-#: includes/class-print-flowchart.php:25
-msgid "You do not have permission to view this page"
+#: class-gravity-flow-flowchart.php:205 includes/class-print-flowchart.php:42
+msgid "Flowchart"
 msgstr ""
 
-#: includes/class-print-flowchart.php:42
-msgid "Flowchart"
+#: class-gravity-flow-flowchart.php:206
+msgid "Zoom In"
+msgstr ""
+
+#: class-gravity-flow-flowchart.php:207
+msgid "Zoom Out"
+msgstr ""
+
+#: class-gravity-flow-flowchart.php:208
+msgid "Print"
+msgstr ""
+
+#: class-gravity-flow-flowchart.php:209
+msgid "Step List"
+msgstr ""
+
+#: includes/class-print-flowchart.php:25
+msgid "You do not have permission to view this page"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
