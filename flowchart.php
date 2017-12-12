@@ -3,7 +3,7 @@
 Plugin Name: Gravity Flow Flowchart Extension
 Plugin URI: http://gravityflow.io
 Description: Flowchart Extension for Gravity Flow
-Version: 1.0
+Version: 1.0.1
 Author: stevehenty
 Author URI: http://gravityflow.com
 License: GPL-3.0+
@@ -29,7 +29,7 @@ along with this program.  If not, see http://www.gnu.org/licenses.
 */
 
 // Defines the current version of the Gravity Flow Flowchart Extension.
-define( 'GRAVITY_FLOW_FLOWCHART_VERSION', '1.0' );
+define( 'GRAVITY_FLOW_FLOWCHART_VERSION', '1.0.1' );
 define( 'GRAVITY_FLOW_FLOWCHART_EDD_ITEM_NAME', 'Flowchart' );
 
 // Defines the minimum version of Gravity Forms required to run Gravity Flow Flowchart Extension.
@@ -58,6 +58,9 @@ class Gravity_Flow_Flowchart_Bootstrap {
 
 		// Requires the class file
 		require_once( plugin_dir_path( __FILE__ ) . '/class-gravity-flow-flowchart.php' );
+
+
+		gravity_flow_flowchart();
 
 		// Registers the class name with GFAddOn
 		GFAddOn::register( 'Gravity_Flow_Flowchart' );
