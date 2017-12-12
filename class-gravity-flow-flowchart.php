@@ -6,15 +6,6 @@ GFForms::include_addon_framework();
 class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 
 	/**
-	 * Contains an instance of this class, if available.
-	 *
-	 * @since  0.1
-	 * @access private
-	 * @var    Gravity_Flow_Flowchart $_instance If available, contains an instance of this class
-	 */
-	private static $_instance = null;
-
-	/**
 	 * Defines the version of the Gravity Flow Flowchart Extension Add-On.
 	 *
 	 * @since  0.1
@@ -22,6 +13,15 @@ class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 	 * @var    string $_version Contains the version.
 	 */
 	protected $_version = GRAVITY_FLOW_FLOWCHART_VERSION;
+
+	/**
+	 * The download slug in EDD. used for license validation.
+	 *
+	 * @since 1.0.1
+	 *
+	 * @var string
+	 */
+	public $edd_item_name = GRAVITY_FLOW_FLOWCHART_EDD_ITEM_NAME;
 
 	/**
 	 * Defines the minimum Gravity Forms version required.
@@ -93,6 +93,15 @@ class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 
 	protected $_capabilities_form_settings = 'gravityflowflowchart_manage';
 	protected $_capabilities_uninstall = 'gravityflowflowchart_uninstall';
+
+	/**
+	 * Contains an instance of this class, if available.
+	 *
+	 * @since  0.1
+	 * @access private
+	 * @var    Gravity_Flow_Flowchart $_instance If available, contains an instance of this class
+	 */
+	private static $_instance = null;
 
 	/**
 	 * Returns an instance of this class, and stores it in the $_instance property.
@@ -195,7 +204,7 @@ class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 				'version' => $this->_version,
 				'enqueue' => array(
 					array(
-						'query' => 'page=gf_edit_forms&view=settings&subview=gravityflow&id=_notempty_',
+						'query' => 'page=gf_edit_forms&view=settings&subview=gravityflow&id=_notempty_&fid=_empty_',
 					),
 					array(
 						'query' => 'action=gravityflowflowchart_print_flowchart'
