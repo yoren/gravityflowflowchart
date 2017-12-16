@@ -29,3 +29,6 @@
 #flowchart-spinner{
     color: silver;
 }
+.add-new-h2{
+    z-index:99;
+}

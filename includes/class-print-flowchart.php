@@ -73,13 +73,13 @@ class Gravity_Flow_Flowchart_Print_Flowchart {
 		$scripts = array(
 			'gravityflow_flowchart_js',
 		);
-		$step_data = gravity_flow_flowchart()->get_step_data();
+
 		$strings = array(
 			'vars' => array(
-				'steps' => $step_data,
+				'steps' => null,
 				'paper' => array(
 					'gridSize' => '10',
-					'drawGrid' => null//array( 'name' => 'dot' )
+					'drawGrid' => null
 				),
 				'graphJSON' => $graphJSON,
 				'graphScale' => $graphScale,
