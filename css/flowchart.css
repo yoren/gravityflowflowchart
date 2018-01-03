@@ -2,14 +2,12 @@
     position: relative;
 }
 #flowchart-icon{
-    float:right;
     font-size:20px;
     position: absolute;
     top: 0;
     right: 20px;
 }
 .rtl #flowchart-icon{
-    float:left;
     left: 20px;
     right: auto;
 }
