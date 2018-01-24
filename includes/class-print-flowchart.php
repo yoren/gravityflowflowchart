@@ -21,7 +21,7 @@ class Gravity_Flow_Flowchart_Print_Flowchart {
 	 */
 	public static function render() {
 
-		if ( ! GFAPI::current_user_can_any( 'gravityflowflowchart_view' ) ) {
+		if ( ! GFAPI::current_user_can_any( 'gravityflowflowchart_manage' ) ) {
 			wp_die( esc_html__( 'You do not have permission to view this page' ) );
 		}
 
@@ -65,10 +65,10 @@ class Gravity_Flow_Flowchart_Print_Flowchart {
 
 		wp_register_script( 'gravityflow_flowchart_js', gravity_flow_flowchart()->get_base_url() . "/js/flowchart{$min}.js", array( 'gravityflow_joint_js', 'jquery' ), gravity_flow_flowchart()->get_version(), true );
 
-		$graphJSON = rgpost( 'flowchart-json' );
+		$graphJSON  = rgpost( 'flowchart-json' );
 		$graphScale = rgpost( 'graph-scale' );
 		$graphScale = sanitize_text_field( $graphScale );
-		$graphJSON = json_decode( $graphJSON, true );
+		$graphJSON  = json_decode( $graphJSON, true );
 
 		$scripts = array(
 			'gravityflow_flowchart_js',
