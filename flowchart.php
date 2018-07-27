@@ -4,14 +4,14 @@ Plugin Name: Gravity Flow Flowchart Extension
 Plugin URI: http://gravityflow.io
 Description: Flowchart Extension for Gravity Flow
 Version: 1.1.1-dev
-Author: stevehenty
+Author: Gravity Flow
 Author URI: http://gravityflow.com
 License: GPL-3.0+
 Text Domain: gravityflowflowchart
 Domain Path: /languages
 
 ------------------------------------------------------------------------
-Copyright 2017 Steven Henty S.L.
+Copyright 2017-2018 Steven Henty S.L.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
