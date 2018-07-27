@@ -1,1 +1,1 @@
-- Fixed an issue with the permissions on the settings page.
+

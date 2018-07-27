@@ -42,11 +42,10 @@ The Gravity Flow Flowchart Extension will work with any license of [Gravity Flow
 
 == ChangeLog ==
 
-= 1.0.2 =
+= 1.1 =
+- Fixed an issue with the permissions on the settings page.
 - Fixed an issue preventing the flowchart from being printed.
 - Fixed an issue with the styles of the Add New step button when the flowchart is displayed.
-
-= 1.0.1 =
 - Fixed an issue preventing the license key from being validated.
 - Fixed an issue where the flowchart icon appears on the step settings page.
 
