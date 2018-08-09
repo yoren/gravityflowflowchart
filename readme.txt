@@ -42,6 +42,9 @@ The Gravity Flow Flowchart Extension will work with any license of [Gravity Flow
 
 == ChangeLog ==
 
+= 1.1.1 =
+- Fixed an issue with the permissions on the settings page where the settings can't be saved.
+
 = 1.1 =
 - Fixed an issue with the permissions on the settings page.
 - Fixed an issue preventing the flowchart from being printed.
