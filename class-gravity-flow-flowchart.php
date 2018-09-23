@@ -87,12 +87,14 @@ class Gravity_Flow_Flowchart extends Gravity_Flow_Extension {
 	protected $_short_title = 'Flowchart';
 
 	protected $_capabilities = array(
-		'gravityflowflowchart_view',
 		'gravityflowflowchart_uninstall',
+		'gravityflowflowchart_settings',
+		'gravityflowflowchart_manage',
 	);
 
+	protected $_capabilities_app_settings = 'gravityflowflowchart_settings';
 	protected $_capabilities_form_settings = 'gravityflowflowchart_manage';
-	protected $_capabilities_uninstall = 'gravityflowflowchart_uninstall';
+	protected $_capabilities_uninstall     = 'gravityflowflowchart_uninstall';
 
 	/**
 	 * Contains an instance of this class, if available.

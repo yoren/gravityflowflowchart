@@ -3,15 +3,15 @@
 Plugin Name: Gravity Flow Flowchart Extension
 Plugin URI: http://gravityflow.io
 Description: Flowchart Extension for Gravity Flow
-Version: 1.0.3-dev
-Author: stevehenty
+Version: 1.1.2-dev
+Author: Gravity Flow
 Author URI: http://gravityflow.com
 License: GPL-3.0+
 Text Domain: gravityflowflowchart
 Domain Path: /languages
 
 ------------------------------------------------------------------------
-Copyright 2017 Steven Henty S.L.
+Copyright 2017-2018 Steven Henty S.L.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ along with this program.  If not, see http://www.gnu.org/licenses.
 */
 
 // Defines the current version of the Gravity Flow Flowchart Extension.
-define( 'GRAVITY_FLOW_FLOWCHART_VERSION', '1.0.3-dev' );
+define( 'GRAVITY_FLOW_FLOWCHART_VERSION', '1.1.2-dev' );
 define( 'GRAVITY_FLOW_FLOWCHART_EDD_ITEM_NAME', 'Flowchart' );
 
 // Defines the minimum version of Gravity Forms required to run Gravity Flow Flowchart Extension.
